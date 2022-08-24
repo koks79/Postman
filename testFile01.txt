@@ -1,0 +1,1 @@
+For testing fetch and merge in Git GUI
