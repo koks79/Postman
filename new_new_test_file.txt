@@ -1,1 +1,6 @@
 My new new file for lessons on skillfactory
+pm.test("The 1st pet in the list is the latest added with the name '" + jsonData.pets[0].name + "'", function () {
+    pm.expect(jsonData.pets[0].name).to.eql(pm.collectionVariables.get("name"));
+});pm.test("The 1st pet in the list is the latest added with the name '" + jsonData.pets[0].name + "'", function () {
+    pm.expect(jsonData.pets[0].name).to.eql(pm.collectionVariables.get("name"));
+});

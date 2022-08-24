@@ -1,3 +1,10 @@
 pm.test("Status code is 200, petID recorded is '" + pm.collectionVariables.get("petID")+ "', name recorded is '" + pm.collectionVariables.get("name") + "'", function () {
     pm.response.to.have.status(200);
 });
+pm.test("Pet's new name is '" + jsonData.name + "', while the previous name was '" + pm.collectionVariables.get("name") +"'", function () {
+    pm.expect(jsonData.name).to.not.eql(pm.collectionVariables.get("name"));
+    pm.collectionVariables.set("name", jsonData.name);
+});
+pm.test("The 1st pet in the list is the latest added with the name '" + jsonData.pets[0].name + "'", function () {
+    pm.expect(jsonData.pets[0].name).to.eql(pm.collectionVariables.get("name"));
+});
